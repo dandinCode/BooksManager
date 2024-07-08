@@ -1,0 +1,35 @@
+<h1 class="text-center">Meus Livros</h1>
+
+<div class="text-center">
+    <div class="m-3">
+        <h5> Filtrar por:</h5>
+    
+        <div class="btn-group">
+            <form action="/book/filter/1" method="GET">
+                <button type="submit" class="btn btn-primary active m-1" aria-current="page">Lidos</button>
+            </form>
+            <form action="/book/filter/0" method="GET">
+                <button type="submit" class="btn btn-primary active m-1">Não lidos</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    <div class="text-center">
+        {{#each books}}
+        <div class="card mb-4" >
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{this.author}}</h6>
+                <form action="/book/details" method="POST">
+                    <input hidden="true" name="id" value={{this.id}}/>
+                    <button type="submit" class="rounded btn btn-outline-primary ">Detalhes</button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    
+</div>
+
+

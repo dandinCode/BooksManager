@@ -1,0 +1,33 @@
+<h1 class="text-center">Edite o livro: {{book.title}}</h1>
+
+<div class="text-center">
+    <form action="/book/updateSave" method="POST">
+         <input hidden="true" name="id" value={{book.id}}>
+        <label>Título</label> <br/>
+        <input name="title" type="text" placeholder="título" class="rounded" value={{book.title}}>
+        <br/><br/>
+        <label>Autor</label><br/>
+        <input name="author" type="text" placeholder="autor" class="rounded" value={{book.author}}>
+        <br/><br/>
+        <label>Gênero</label><br/>
+        <input name="gender" type="text" placeholder="gênero" class="rounded" value={{book.gender}}>
+        <br/><br/>
+        <label>Editora</label><br/>
+        <input name="company" type="text" placeholder="editora" class="rounded" value={{book.company}}>
+        <br/><br/>
+         <label>Resenha</label><br/>
+        <textarea name="abstract" placeholder="resenha" class="rounded">{{book.abstract}}</textarea>
+        <br/><br/>
+        <label>Foi lido?</label><br/>
+        {{#if book.isReaded}}
+                <input name="isReaded" type="checkbox" checked>
+            {{else}}
+                <input name="isReaded" type="checkbox">
+        {{/if}}
+        <br/><br/>
+        <button type="submit" class="rounded bg-success text-light">Atualizar</button>
+
+    </form>
+</div>
+
+

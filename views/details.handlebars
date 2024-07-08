@@ -1,0 +1,44 @@
+<h1 class="text-center">{{book.title}}</h1>
+
+<div class="text-center">
+    <div>
+        <div class="h6">Autor: </div>
+        <div class="h5">{{book.author}}</div>
+    </div>
+    <div>
+        <div class="h6">Gênero: </div>
+        <div class="h5">{{book.gender}}</div>
+    </div>
+    <div>
+        <div class="h6">Editora: </div>
+        <div class="h5">{{book.company}}</div>
+    </div>
+    <div>
+        <div class="h6">Resenha: </div>
+        <div class="h5">{{book.abstract}}</div>
+    </div>
+    {{#if book.isReaded}}
+            <div class="h4 text-success">Lido </div>
+        {{else}}
+            <div class="h4 text-warning">Não Lido </div>
+    {{/if}}
+</div>
+
+<div class="m-3 text-center">    
+        <div class="btn-group">
+            <form action="/book/update" method="POST">
+                <input hidden="true" name="id" value={{book.id}}/>
+                <button type="submit" class="btn btn-primary active m-1" aria-current="page">Atualizar Livro</button>
+            </form>
+            <form action="/book/delete" method="POST">
+                <input hidden="true" name="id" value={{book.id}}/>
+                <button type="submit" class="btn btn-danger active m-1">Excluir Livro</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+

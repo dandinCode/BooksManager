@@ -1,0 +1,32 @@
+<h1 class="text-center">Cadastre seu livro</h1>
+
+<div class="text-center">
+    <form action="/book/register" method="POST">
+        <label>Título</label> <br/>
+        <input name="title" type="text" placeholder="título" class="rounded">
+        <br/><br/>
+        <label>Autor</label><br/>
+        <input name="author" type="text" placeholder="autor" class="rounded">
+        <br/><br/>
+        <label>Gênero</label><br/>
+        <input name="gender" type="text" placeholder="gênero" class="rounded">
+        <br/><br/>
+        <label>Editora</label><br/>
+        <input name="company" type="text" placeholder="editora" class="rounded">
+        <br/><br/>
+         <label>Resenha</label><br/>
+        <textarea name="abstract" placeholder="resenha" class="rounded"></textarea>
+        <br/><br/>
+        <label>Foi lido?</label><br/>
+        <input name="isReaded" type="checkbox">
+        <br/><br/>
+
+        <button type="submit" class="rounded bg-success text-light">Cadastrar</button>
+
+    </form>
+</div>
+
+
+
+
+
